@@ -80,7 +80,7 @@ def predictfun(gender, age, fashion_type, country, color):
         Move()
     #return images[0], images[1], images[2]
 def Move():
-    webbrowser.open_new_tab('https://mail.google.com')
+    webbrowser.open_new_tab('file:///G:/sigma%20web%20development%20course/video%202/index.html')
 def main():
     header = """
     <div style="background-color:#f63366;padding:10px;border-radius:10px">
