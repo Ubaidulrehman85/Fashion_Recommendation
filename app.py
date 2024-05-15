@@ -5,6 +5,7 @@ import random
 from joblib import dump, load
 import shutil
 import streamlit as st
+import webbrowser
 
 model_impact = load('Fashionmodel.joblib')
 
@@ -75,17 +76,32 @@ def predictfun(gender, age, fashion_type, country, color):
         st.image(images[1], caption='Generated Image', use_column_width=True)
     if(os.path.exists(images[2])):
         st.image(images[2], caption='Generated Image', use_column_width=True)
+    if st.button('Move'):
+        Move()
     #return images[0], images[1], images[2]
+def Move():
+    webbrowser.open('https://mail.google.com')
 def main():
+    header = """
+    <div style="background-color:#f63366;padding:10px;border-radius:10px">
+        <h1 style="color:white;text-align:center;">My Streamlit App</h1>
+    </div>
+    """
+    footer = """
+    <div style="position:fixed;bottom:0;left:0;width:100%;background-color:#f63366;padding:10px;text-align:center;">
+        <p style="color:white;">This is my awesome Streamlit app!</p>
+    </div>
+    """
+    st.markdown(header, unsafe_allow_html=True)
     st.title("Fashion Prediction")
-
     gender = st.radio("Select Gender", ("Male", "Female"))
     age = st.number_input("Enter Your Age", min_value=0, max_value=150, step=1, value=20)
     fashion_type = st.radio("Select Fashion Type", ("Wedding", "Job", "Party", "Daily_Life"))
     country = st.text_input("Enter Country Name")
     color = st.text_input("Enter Dress Color")
-
+    st.markdown(footer, unsafe_allow_html=True)
     if st.button("Predict"):
             result_images = predictfun(gender,age,fashion_type,country,color)
+    
 if __name__ == '__main__':
     main()
