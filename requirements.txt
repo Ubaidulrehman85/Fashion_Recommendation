@@ -1,0 +1,7 @@
+huggingface-hub
+huggingface-cli
+gradio
+scikit-learn==1.2.2
+Pillow
+bing_image_downloader
+streamlit
