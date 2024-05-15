@@ -76,11 +76,12 @@ def predictfun(gender, age, fashion_type, country, color):
         st.image(images[1], caption='Generated Image', use_column_width=True)
     if(os.path.exists(images[2])):
         st.image(images[2], caption='Generated Image', use_column_width=True)
-    if st.button('Move'):
-        Move()
+    if st.button("Go to Example.com"):
+        st.write(Move("https://www.example.com"), unsafe_allow_html=True)
     #return images[0], images[1], images[2]
 def Move():
-    webbrowser.open_new_tab('file:///G:/sigma%20web%20development%20course/video%202/index.html')
+    url="http://www.YouTube.com"
+   return f'<a href="{url}" target="_blank">Go to Example.com</a>'
 def main():
     header = """
     <div style="background-color:#f63366;padding:10px;border-radius:10px">
