@@ -79,7 +79,7 @@ def predictfun(gender, age, fashion_type, country, color):
     if st.button("Go to YouTube.com"):
         st.write(Move("https://www.youtube.com/"), unsafe_allow_html=True)
     #return images[0], images[1], images[2]
-def Move(url):
+def Move(www.youtube.com):
    return f'<a href={"www.youtube.com"} target="_blank">Go to YouTube.com</a>'
 def main():
     header = """
