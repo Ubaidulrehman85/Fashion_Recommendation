@@ -79,8 +79,11 @@ def predictfun(gender, age, fashion_type, country, color):
     if st.button("Go to YouTube.com"):
         st.write(Move("https://www.youtube.com/"), unsafe_allow_html=True)
     #return images[0], images[1], images[2]
-def Move(url):
-   return f'<a href={"url"} target="www.youtube.com">Go to YouTube.com</a>'
+# Display a button that links to another website
+if st.button("Visit Streamlit"):
+    link = "[Streamlit](https://www.apple.com/)"
+    st.write(link, unsafe_allow_html=True)
+
 def main():
     header = """
     <div style="background-color:#f63366;padding:10px;border-radius:10px">
