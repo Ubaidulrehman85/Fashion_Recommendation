@@ -79,10 +79,14 @@ def predictfun(gender, age, fashion_type, country, color):
     if st.button("move"):
      
     #return images[0], images[1], images[2]
+# Define the function to open a webpage
 def open_webpage(url):
     js = f"window.open('{url}')"  # JavaScript to open a new tab with the URL
     html = '<input type="button" value="Visit Website" onclick="{}">'.format(js)
     return html
+
+# Display the button in Streamlit
+st.write(open_webpage("https://www.example.com"), unsafe_allow_html=True)
 
 # Display the button in Streamlit
 st.write(open_webpage("https://www.example.com"), unsafe_allow_html=True)
