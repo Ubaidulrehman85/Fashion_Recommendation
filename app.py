@@ -80,7 +80,7 @@ def predictfun(gender, age, fashion_type, country, color):
         st.write(Move("https://www.example.com"), unsafe_allow_html=True)
     #return images[0], images[1], images[2]
 def Move():
-    url="http://www.YouTube.com"
+   url="http://www.YouTube.com"
    return f'<a href="{url}" target="_blank">Go to Example.com</a>'
 def main():
     header = """
