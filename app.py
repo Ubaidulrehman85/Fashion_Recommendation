@@ -143,13 +143,6 @@ def main():
 				  <li><a href="checkup.php">CheckUp</a>
                 
                   </li>
-				  
-				  <!--<li><a href="https://fashionrecommendation-bmr7h4rgtzatnrvc87lemm.streamlit.app/">Recommendation</a>
-                
-                  </li>-->
-
-				  <!--<li><a href="page-doctors-style1.html">Doctors</a>
-                   </li>-->
               <li><a href="comming_soon.php">Blog</a>
                 
               </li>
