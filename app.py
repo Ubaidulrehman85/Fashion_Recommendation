@@ -71,6 +71,13 @@ def predictfun(gender, age, fashion_type, country, color):
                     images.append(image_path)
                 except Exception as e:
                     print(f"Error reading {file}: {e}")
+    URL_STRING = "http://localhost/Plantix/PHP/services.php"
+    st.markdown(
+    f'<div style="position: absolute; top: 10px; right: 10px;">'
+    f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Action Text on Button</a>'
+    f'</div>',
+    unsafe_allow_html=True
+    )
     if(os.path.exists(images[0])):
         st.image(images[0], caption='Generated Image', use_column_width=True)
     if(os.path.exists(images[1])):
@@ -84,31 +91,6 @@ def predictfun(gender, age, fashion_type, country, color):
 
 def main():
     st.title("Fashion Prediction")
-    URL_STRING = "http://localhost/Plantix/PHP/services.php"
-    st.markdown(
-    f'<button onclick="window.location.href=\'{URL_STRING}\'" style="display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px; cursor: pointer;">Action Text on Button</button>',
-    unsafe_allow_html=True
-    )
-    # st.markdown(
-    # f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Action Text on Button</a>',
-    # unsafe_allow_html=True
-    # )
-    # nav_options = ["Home", "About", "Localhost"]
-    # # Render the navigation bar
-    # selected_page = st.sidebar.radio("Navigation", nav_options)
-    # # Render content based on the selected page
-    # if st.button('Go to Streamlit'):
-    #     js = "window.open('http://localhost/Plantix/PHP/services.php')"  # New tab or window
-    #     js = "window.location.href = 'http://localhost/Plantix/PHP/services.php'"  # Current tab
-    #     html = '<img src onerror="{}">'.format(js)
-    #     div = Div(text=html)
-    #     st.bokeh_chart(div)
-    # elif selected_page == "About":
-    #    st.write("This is the About page.")
-    # elif selected_page == "Localhost":
-    #    st.write("Redirecting to localhost webpage...")
-    #    # Open the localhost webpage in the browser
-    #    webbrowser.open_new_tab("http://localhost/Plantix/PHP/services.php")
     gender = st.radio("Select Gender", ("Male", "Female"))
     age = st.number_input("Enter Your Age", min_value=0, max_value=150, step=1, value=20)
     fashion_type = st.radio("Select Fashion Type", ("Wedding", "Job", "Party", "Daily_Life"))
