@@ -119,7 +119,7 @@ def main():
             }
         </style>
         <div class="navbar">
-            <a href="#home">Home</a>
+            <a href="http://localhost/Plantix/PHP/services.php">Home</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </div>
