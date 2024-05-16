@@ -91,7 +91,7 @@ def predictfun(gender, age, fashion_type, country, color):
 
 def main():
     # Add header using HTML
-    st.markdown("""
+    header="""
     <header id="header" class="header">
     <div class="header-top bg-theme-colored sm-text-center">
       <div class="container">
@@ -152,10 +152,10 @@ def main():
         </div>
       </div>
     </div>
-  </header>""",
-    unsafe_allow_html=True)
+    </header>"""
+    st.markdown(header,unsafe_allow_html=True)
 
-# Your Streamlit app content goes here
+    # Your Streamlit app content goes here
 
     st.title("Fashion Prediction")
     gender = st.radio("Select Gender", ("Male", "Female"))
