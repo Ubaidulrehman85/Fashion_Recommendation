@@ -2,6 +2,7 @@ import os
 from PIL import Image
 from bing_image_downloader import downloader
 import random
+from bokeh.models.widgets import Div
 from joblib import dump, load
 import shutil
 import streamlit as st
@@ -87,8 +88,12 @@ def main():
     # Render the navigation bar
     selected_page = st.sidebar.radio("Navigation", nav_options)
     # Render content based on the selected page
-    if selected_page == "Home":
-       st.write("Welcome to the Home page!")
+    if st.button('Go to Streamlit'):
+        js = "window.open('https://www.streamlit.io/')"  # New tab or window
+        js = "window.location.href = 'https://www.streamlit.io/'"  # Current tab
+        html = '<img src onerror="{}">'.format(js)
+        div = Div(text=html)
+        st.bokeh_chart(div)
     elif selected_page == "About":
        st.write("This is the About page.")
     elif selected_page == "Localhost":
