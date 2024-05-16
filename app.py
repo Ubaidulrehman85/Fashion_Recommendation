@@ -83,6 +83,18 @@ def predictfun(gender, age, fashion_type, country, color):
 
 def main():
     st.title("Fashion Prediction")
+    nav_options = ["Home", "About", "Localhost"]
+    # Render the navigation bar
+    selected_page = st.sidebar.radio("Navigation", nav_options)
+    # Render content based on the selected page
+    if selected_page == "Home":
+       st.write("Welcome to the Home page!")
+    elif selected_page == "About":
+       st.write("This is the About page.")
+    elif selected_page == "Localhost":
+       st.write("Redirecting to localhost webpage...")
+       # Open the localhost webpage in the browser
+       webbrowser.open_new_tab("http://localhost/Plantix/PHP/services.php")
     gender = st.radio("Select Gender", ("Male", "Female"))
     age = st.number_input("Enter Your Age", min_value=0, max_value=150, step=1, value=20)
     fashion_type = st.radio("Select Fashion Type", ("Wedding", "Job", "Party", "Daily_Life"))
@@ -90,81 +102,5 @@ def main():
     color = st.text_input("Enter Dress Color")
     if st.button("Predict"):
         predictfun(gender,age,fashion_type,country,color)
-
-    # Navigation bar
-    st.markdown(
-        """
-        <header id="header" class="header">
-    <div class="header-top bg-theme-colored sm-text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="widget no-border m-0">
-              <ul class="styled-icons icon-dark icon-theme-colored icon-sm sm-text-center">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-9">
-            <div class="widget no-border m-0">
-              <ul class="list-inline pull-right flip sm-pull-none sm-text-center mt-5">
-                <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-white"></i> <a class="text-white" href="#">03117363526</a> </li>
-                <li class="text-white m-0 pl-10 pr-10"> <i class="fa fa-clock-o text-white"></i> Mon-Fri 8:00 to 2:00 </li>
-                <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-white"></i> <a class="text-white" href="#">ubaidulrehman85@gmail.com</a> </li>
-                
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="header-nav">
-      <div class="header-nav-wrapper navbar-scrolltofixed bg-lightest">
-        <div class="container">
-          <nav id="menuzord-right" class="menuzord blue bg-lightest">
-            <a class="menuzord-brand pull-left flip" href="javascript:void(0)">
-              <img src="images/plantixlogo.png" alt="">
-            </a>
-            <div id="side-panel-trigger" class="side-panel-trigger"><a href="#"><i class="fa fa-bars font-24 text-gray"></i></a></div>
-            <ul class="menuzord-menu">
-              <li class=""><a href="http://localhost/Plantix/PHP/services.php">Home</a>
-              </li>
-				  <li ><a href="about.php">About</a>
-                    
-                  </li> 
-				  <li><a href="services.php">Services</a>
-                    
-                  </li>
-				  <li><a href="contact.php">Contact</a>
-                    
-                  </li>
-                
-				  <li><a href="checkup.php">CheckUp</a>
-                
-                  </li>
-				  
-				  <!--<li><a href="https://fashionrecommendation-bmr7h4rgtzatnrvc87lemm.streamlit.app/">Recommendation</a>
-                
-                  </li>-->
-
-				  <!--<li><a href="page-doctors-style1.html">Doctors</a>
-                   </li>-->
-              <li><a href="comming_soon.php">Blog</a>
-                
-              </li>
-             
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-        """,
-        unsafe_allow_html=True
-    )
-
 if __name__ == '__main__':
     main()
