@@ -82,26 +82,50 @@ def predictfun(gender, age, fashion_type, country, color):
 
 
 def main():
-    header = """
-    <div style="background-color:#f63366;padding:10px;border-radius:10px">
-        <h1 style="color:white;text-align:center;">My Streamlit App</h1>
-    </div>
-    """
-    footer = """
-    <div style="position:fixed;bottom:0;left:0;width:100%;background-color:#f63366;padding:10px;text-align:center;">
-        <p style="color:white;">This is my awesome Streamlit app!</p>
-    </div>
-    """
-    st.markdown(header, unsafe_allow_html=True)
     st.title("Fashion Prediction")
     gender = st.radio("Select Gender", ("Male", "Female"))
     age = st.number_input("Enter Your Age", min_value=0, max_value=150, step=1, value=20)
     fashion_type = st.radio("Select Fashion Type", ("Wedding", "Job", "Party", "Daily_Life"))
     country = st.text_input("Enter Country Name")
     color = st.text_input("Enter Dress Color")
-    st.markdown(footer, unsafe_allow_html=True)
     if st.button("Predict"):
-            result_images = predictfun(gender,age,fashion_type,country,color)
-    
+        predictfun(gender,age,fashion_type,country,color)
+
+    # Navigation bar
+    st.markdown(
+        """
+        <style>
+            .navbar {
+                overflow: hidden;
+                background-color: #333;
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .navbar a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+        </style>
+        <div class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 if __name__ == '__main__':
     main()
