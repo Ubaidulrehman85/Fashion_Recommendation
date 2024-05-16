@@ -89,8 +89,8 @@ def main():
     selected_page = st.sidebar.radio("Navigation", nav_options)
     # Render content based on the selected page
     if st.button('Go to Streamlit'):
-        js = "window.open('https://www.streamlit.io/')"  # New tab or window
-        js = "window.location.href = 'https://www.streamlit.io/'"  # Current tab
+        js = "window.open('http://localhost/Plantix/PHP/services.php')"  # New tab or window
+        js = "window.location.href = 'http://localhost/Plantix/PHP/services.php'"  # Current tab
         html = '<img src onerror="{}">'.format(js)
         div = Div(text=html)
         st.bokeh_chart(div)
