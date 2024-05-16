@@ -5,3 +5,4 @@ scikit-learn==1.2.2
 Pillow
 bing_image_downloader
 streamlit
+bokeh==2.4.3
