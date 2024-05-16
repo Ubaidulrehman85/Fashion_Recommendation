@@ -86,7 +86,7 @@ def main():
     st.title("Fashion Prediction")
     URL_STRING = "http://localhost/Plantix/PHP/services.php"
     st.markdown(
-    f'<a href="{URL_STRING}" target="https://fashionrecommendation-bmr7h4rgtzatnrvc87lemm.streamlit.app/" style="display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Action Text on Button</a>',
+    <button onclick="window.location.href='{URL_STRING}'" style="display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px; cursor: pointer;">Action Text on Button</button>,
     unsafe_allow_html=True
     )
     # st.markdown(
