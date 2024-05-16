@@ -90,22 +90,22 @@ def main():
     f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Action Text on Button</a>',
     unsafe_allow_html=True
     )
-    nav_options = ["Home", "About", "Localhost"]
-    # Render the navigation bar
-    selected_page = st.sidebar.radio("Navigation", nav_options)
-    # Render content based on the selected page
-    if st.button('Go to Streamlit'):
-        js = "window.open('http://localhost/Plantix/PHP/services.php')"  # New tab or window
-        js = "window.location.href = 'http://localhost/Plantix/PHP/services.php'"  # Current tab
-        html = '<img src onerror="{}">'.format(js)
-        div = Div(text=html)
-        st.bokeh_chart(div)
-    elif selected_page == "About":
-       st.write("This is the About page.")
-    elif selected_page == "Localhost":
-       st.write("Redirecting to localhost webpage...")
-       # Open the localhost webpage in the browser
-       webbrowser.open_new_tab("http://localhost/Plantix/PHP/services.php")
+    # nav_options = ["Home", "About", "Localhost"]
+    # # Render the navigation bar
+    # selected_page = st.sidebar.radio("Navigation", nav_options)
+    # # Render content based on the selected page
+    # if st.button('Go to Streamlit'):
+    #     js = "window.open('http://localhost/Plantix/PHP/services.php')"  # New tab or window
+    #     js = "window.location.href = 'http://localhost/Plantix/PHP/services.php'"  # Current tab
+    #     html = '<img src onerror="{}">'.format(js)
+    #     div = Div(text=html)
+    #     st.bokeh_chart(div)
+    # elif selected_page == "About":
+    #    st.write("This is the About page.")
+    # elif selected_page == "Localhost":
+    #    st.write("Redirecting to localhost webpage...")
+    #    # Open the localhost webpage in the browser
+    #    webbrowser.open_new_tab("http://localhost/Plantix/PHP/services.php")
     gender = st.radio("Select Gender", ("Male", "Female"))
     age = st.number_input("Enter Your Age", min_value=0, max_value=150, step=1, value=20)
     fashion_type = st.radio("Select Fashion Type", ("Wedding", "Job", "Party", "Daily_Life"))
