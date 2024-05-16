@@ -78,7 +78,7 @@ def predictfun(gender, age, fashion_type, country, color):
         st.image(images[1], caption='Generated Image', use_column_width=True)
     if(os.path.exists(images[2])):
         st.image(images[2], caption='Generated Image', use_column_width=True)
-    URL_STRING = "http://localhost/Plantix/PHP/services.php"
+    URL_STRING = "http://localhost/weiboo/PHP/index-two.php"
     st.markdown(
     f'<div style="position: absolute; top: 10px; right: 0px;">'
     f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Action Text on Button</a>'
