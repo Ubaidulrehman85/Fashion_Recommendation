@@ -90,6 +90,12 @@ def predictfun(gender, age, fashion_type, country, color):
 
 
 def main():
+    banner_html = """
+    <div style="background-color:#f0f0f0;padding:10px;border-radius:10px">
+    <h1 style="color:#333;text-align:center;">Your Banner Text</h1>
+    </div>
+    """
+    st.markdown(banner_html, unsafe_allow_html=True)
     # Your Streamlit app content goes here
     st.title("Fashion Prediction")
     gender = st.radio("Select Gender", ("Male", "Female"))
