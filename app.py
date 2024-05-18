@@ -91,13 +91,13 @@ def predictfun(gender, age, fashion_type, country, color):
 
 def main():
     # Your Streamlit app content goes here
-    st.title("Fashion Prediction")
+    st.title("Fashion Recommendation System")
     gender = st.radio("Select Gender", ("Male", "Female"))
     age = st.number_input("Enter Your Age", min_value=0, max_value=150, step=1, value=20)
     fashion_type = st.radio("Select Fashion Type", ("Wedding", "Job", "Party", "Daily_Life"))
     country = st.text_input("Enter Country Name")
     color = st.text_input("Enter Dress Color")
-    if st.button("Predict"):
+    if st.button("Recommend"):
         predictfun(gender,age,fashion_type,country,color)
 if __name__ == '__main__':
     main()
