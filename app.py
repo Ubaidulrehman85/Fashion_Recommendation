@@ -2,7 +2,6 @@ import os
 from PIL import Image
 from bing_image_downloader import downloader
 import random
-from bokeh.models.widgets import Div
 from joblib import dump, load
 import shutil
 import streamlit as st
