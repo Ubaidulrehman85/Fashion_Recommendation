@@ -4,3 +4,4 @@ bing_image_downloader
 streamlit
 bokeh
 numpy
+joblib
